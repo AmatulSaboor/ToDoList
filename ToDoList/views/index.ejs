@@ -29,9 +29,11 @@ if(!locals.error){
                                 <h1>List Of Todos</h1>
                             </div>
                             <div class="col-sm-6">
-                                <form action=""method="post">
-                                    <input/>
-                                    <button class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Add todo</span></button>
+                                <form action="http://localhost:3000/add" method="post">
+                                    <input type = "number" name = "id" placeholder="enter todo"/>
+                                    <input type = "text" name = "name" placeholder="enter name"/>
+                                    <input type = "hidden" name = "isChecked"/>
+                                    <button type = "submit" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Add todo</span></button>
                                 </form>
                             </div>
                         </div>
@@ -40,6 +42,7 @@ if(!locals.error){
                         <thead>
                             <tr>
                                 <th>Id</th>
+                                <th>Done</th>
                                 <th>ToDo</th>
                                 <th>X</th>
                             </tr>
@@ -48,6 +51,7 @@ if(!locals.error){
                             <% for(let todo of locals.todos){ %>
                                 <tr>
                                     <td><%= todo.id %></td>
+                                    <td><input type = "checkbox" onclick="window.location.href='http://localhost:3000/toggleTodoChecked/<%=todo.id%>'" <%=todo.isChecked%> /></td>
                                     <td><%= todo.name %></td>
                                     <td>
                                         <a href="http://localhost:3000/delete/<%=todo.id%>" class="delete"><i class="material-icons" title="">X</i></a>
@@ -60,5 +64,14 @@ if(!locals.error){
             </div>        
         </div>
 	</body>
+    <script>
+        // $("tr").click( (e, x)=> 
+        //   {
+        //   console.log("I am in row");
+        //   console.log(e);
+        //   console.log(x);
+        // //   window.location.href='https://google.com';
+        //  });
+    </script>
     <script src="./assets/js/index.js"></script>
 </html>

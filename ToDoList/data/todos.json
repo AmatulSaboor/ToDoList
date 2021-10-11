@@ -1,4 +1,27 @@
 [
-    {"id":"1", "name":"HomeWork"},
-    {"id":"2", "name":"Shopping"}
+    {
+        "id": "0",
+        "name": "Shopping",
+        "isChecked": "checked"
+    },
+    {
+        "id": "1",
+        "name": "HomeWork",
+        "isChecked": ""
+    },
+    {
+        "id": "2",
+        "name": "Dinner",
+        "isChecked": "checked"
+    },
+    {
+        "id": "7",
+        "name": "Hina",
+        "isChecked": "checked"
+    },
+    {
+        "id": "5",
+        "name": "Sabahat",
+        "isChecked": ""
+    }
 ]
